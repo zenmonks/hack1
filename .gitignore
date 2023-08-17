@@ -1,0 +1,8 @@
+
+#environments
+.venv
+venv/
+#virtual environment related
+bin/
+include/
+pip-selfcheck.json
