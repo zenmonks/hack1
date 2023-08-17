@@ -4,17 +4,23 @@
 
 2. Get the URL from USER/hack1 repo
 
-3. Install Python3 : ``
+3. [Install Python3](https://www.python.org/downloads/). 
+   3.1. pip install, 
+   3.2. venv install.
 
 4. Open terminal & write ` git clone <URL>`
 
 5. Create branch : `git checkout -b <branch_name>`
 
 5. Setup virtual environment :
+     5.1. create venv : `python3 -m venv venv`
+     5.2. activate venv 
 
 6. Install Django 
+     6.1. pip install django
+     6.2. `sudo apt install python3-django`
 
-7. Make the chages
+7. Make chages
 
 8. Update the repo :  `git pull origin main`
 
