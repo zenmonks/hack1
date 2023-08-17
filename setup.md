@@ -5,8 +5,8 @@
 2. Get the URL from USER/hack1 repo
 
 3. [Install Python3](https://www.python.org/downloads/). 
-   <br>3.1. pip install, 
-   <br>3.2. venv install.
+   <br> 3.1. pip install, 
+   <br> 3.2. venv install.
 
 4. Open terminal & write ` git clone <URL>`
 
