@@ -49,3 +49,6 @@
 5. Push it
 
 6. Make PR
+
+## How to update your local branch 
+` git pull origin main`
