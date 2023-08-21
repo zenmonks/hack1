@@ -16,7 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import re_path as url
+#from apiapp import views
+from backend import views
+#from ..backend.views import WeatherForecast
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #url('book/', views.BookApiView.as_view()),
+    path('weather/', views.WeatherForecast.as_view()),
 ]

@@ -7,7 +7,7 @@
 
 3. [Install Python3](https://www.python.org/downloads/). 
    <br> 3.1. pip install, 
-   <br> 3.2. venv install.
+   <br> 3.2. venv install : `install python3-venv`
 
 4. Open terminal & write ` git clone <URL>`
 
@@ -16,6 +16,9 @@
 5. Setup virtual environment :
     <br> 5.1. create venv : `python3 -m venv venv`
     <br> 5.2. activate venv 
+       <br> windows : `venv/Scripts/activate`
+
+   <br> linux/macos : ` source venv/bin/activate`
 
 6. Install Django 
    <br>  6.1. pip install django
@@ -46,3 +49,6 @@
 5. Push it
 
 6. Make PR
+
+## How to update your local branch 
+` git pull origin main`
