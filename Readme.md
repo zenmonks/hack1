@@ -13,28 +13,28 @@
 
 5. Create branch : `git checkout -b <branch_name>`
 
-5. Setup virtual environment :
+6. Setup virtual environment :
     <br> 5.1. create venv : `python3 -m venv venv`
     <br> 5.2. activate venv 
        <br> windows : `venv/Scripts/activate`
 
    <br> linux/macos : ` source venv/bin/activate`
 
-6. Install Django 
+7. Install Django 
    <br>  6.1. pip install django
    <br>  6.2. `sudo apt install python3-django`
 
-7. Make chages
+8. Make chages
 
-8. Update the repo :  `git pull origin main`
+9. Update the repo :  `git pull origin main`
 
-9. Stage the changes : `git add .`
+10. Stage the changes : `git add .`
 
-10. Add commit message : `git commit -m "message"`
+11. Add commit message : `git commit -m "message"`
 
-11. Push those changes : `git push origin <branch_name>`
+12. Push those changes : `git push origin <branch_name>`
 
-12. Make PR
+13. Make PR
 
 ## How to revert changes
 

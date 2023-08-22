@@ -7,7 +7,7 @@ from django.views import View
 # Create your views here.
 class WeatherForecast(View):
     def get(self, request):
-        #Getthe location coordinates from the frontend
+        #Get the location coordinates from the frontend
         lat = request.GET.get('lattitude')
         lon = request.GET.get('longitude')
 
