@@ -20,7 +20,24 @@ class WeatherHistory(View):
         #condition to check the API call is successful or not
         if response.status_code == 200:
             json_result = response.json()
-            return JsonResponse(json_result)
+            History_list = json_result['response']['jsonDoc']['result']
+
+            #Extract the required data from the API response
+            extracted_data = []
+            for history_entry in History_list:
+                mean_temp = history_entry['temp']['mean']
+                mean_pressure = history_entry['pressure']['mean']
+                mean_humidity = history_entry['humidity']['mean']
+                mean_clouds = history_entry['clouds']['mean']
+                mean_precipitation = history_entry['precipitation']['mean']
+                extracted_data.append({
+                    'mean_temp': mean_temp,
+                    'mean_pressure': mean_pressure,
+                    'mean_humidity': mean_humidity,
+                    'mean_clouds': mean_clouds,
+                    'mean_precipitation': mean_precipitation,
+                })
+            return JsonResponse({'weather_history' : extracted_data})
         
         else:
             error_message = {'error' : 'Something went wrong'}
