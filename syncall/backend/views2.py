@@ -12,7 +12,7 @@ class WeatherHistory(View):
         api_call = f'https://cloud.syncloop.com/tenant/1692162910856/packages.apiweather.weatherii.weatherhistory.main?lon=139&lat=35'
         headers = {
                     'Content-Type' : 'application/json',    
-                    'Authorization' : 'Bearer 6KPnAjasx2BzGyQSF2Lnfw51zqpeNjBy5lHN66E8Fgw5s8dxWsDmpr5DQQAOP7uBKhwOeYrBljpGnJKrpaUWEQ6h9JmFScSEHjiYZQ1NZXVIr+OTK6TXB2NWImPfVdzpwg033S0QyQ5jPJFnwwViuGFxW+QXqxoyJWY3h0Kago8G85t4pN6b3Vt88TjwMuK/BqG0RO2rP2H9mGa1GwrrEGbu0NbS5TPRj1XmVzmBHkJGVdkZKdFcF1u/b2h9TjytIJlyyCvbcFsSZNy8biSWe/dEXmQAH+37q3SuNecjjTV1RqUZzab7OGsylWRiX2O/ef9sYYp1SUOIkD5du7y7NvEOey0InePOX6UzcrQHWP7hYX83HbTQRNh0h5D0rfSu1FQaaSXpP3HMBlQKuKHwnQbwPmoDK1hdR+B92YPk+YC6kpDHnv5Eg/PY8ZMVwcr2hJH4jFpnP8kZOpIMNAiqepx+1mQfSfTKTKiO1iSVrxdj/+cZ/XUVTofFPQ4kSQdYINPTWy+dOOLKzc37ode0gQ==',
+                    'Authorization' : 'Bearer {token}',
         }
 
         response = requests.get(api_call, headers=headers)
