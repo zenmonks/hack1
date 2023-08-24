@@ -30,45 +30,15 @@ class WeatherHistory(View):
                 mean_humidity = history_entry['humidity']['mean']
                 mean_clouds = history_entry['clouds']['mean']
                 mean_precipitation = history_entry['precipitation']['mean']
-
                 extracted_data.append({
                     'mean_temp': mean_temp,
                     'mean_pressure': mean_pressure,
                     'mean_humidity': mean_humidity,
                     'mean_clouds': mean_clouds,
                     'mean_precipitation': mean_precipitation,
-                })     
-
-                mean_values = self.history_mean(extracted_data)
-
-            return JsonResponse({'mean_values' : mean_values})
+                })
+            return JsonResponse({'weather_history' : extracted_data})
         
         else:
             error_message = {'error' : 'Something went wrong'}
             return JsonResponse(error_message)
-        
-    def history_mean(self, extracted_data):
-        num_entries = len(extracted_data)
-        sum_values = {
-            'sum_temp': 0,
-            'sum_humidity': 0,
-            'sum_clouds': 0,
-            'sum_precipitation':0,
-        }
-
-        for entry in extracted_data:
-            sum_values['sum_temp'] += entry['mean_temp']
-            sum_values['sum_humidity'] += entry['mean_humidity']
-            sum_values['sum_precipitation'] += entry['mean_precipitation']
-            sum_values['sum_clouds'] += entry['mean_clouds']
-
-        mean_values = {
-            'temp' : sum_values['sum_temp']/num_entries,
-            'humidity' : sum_values['sum_humidity']/num_entries,
-            'clouds' : sum_values['sum_clouds']/num_entries,
-            'precipitation' : sum_values['sum_precipitation']/num_entries,
-        }
-     
-        return mean_values
-
-        

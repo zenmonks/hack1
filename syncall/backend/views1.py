@@ -37,12 +37,12 @@ class WeatherForecast(View):
                 main = weather_list['main']
                 humidity = forecast_entry['main']['humidity']
                 extracted_data.append({
-                'dt': dt,                    #check
+                'dt': dt,
                 'temp': temp,
                 'humidity': humidity,
-                'description': description,  #check
-                'feels_like': feels_like,    #check
-                'main': main,                #check
+                'description': description,
+                'feels_like': feels_like,
+                'main': main,
             })
         
 
