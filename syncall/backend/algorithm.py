@@ -22,34 +22,46 @@ def activity_planner(weather_data, weather_history):
                 if "Thunderstorm" in main:
                     weather_description = "thunderstorm with heavy rain"  # Replace with the actual weather description
                     if "thunderstorm with heavy rain" in weather_description:
-                        door = 'indoor & unplug electronics'
-                        return door
+                        door = 'indoor'
+                        tip = 'unplug electronics'
+                        return door, tip
                     elif "thunderstorm with light rain" in weather_description:
-                        door = 'indoor & stay away from open areas and tall objects'
-                        return door
+                        door = 'indoor' 
+                        tip = 'stay away from open areas and tall objects'
+                        return door, tip
                     elif "thunderstorm with rain" in weather_description:
-                        door = 'indoor & stay away from open areas and tall objects'
-                        return door
+                        door = 'indoor'
+                        tip = 'stay away from open areas and tall objects'
+                        return door, tip
                     elif "light thunderstorm" in weather_description:
-                        door = 'indoor & stay away from open areas and tall objects'
-                        return door
+                        door = 'indoor'
+                        tip = 'stay away from open areas and tall objects'
+                        return door, tip
                     elif "heavy thunderstorm" in weather_description:
-                        door = 'indoor & unplug electronics'
-                        return door
+                        door = 'indoor'
+                        tip = 'unplug electronics'
+                        return door, tip
                     elif "ragged thunderstorm" in weather_description:
-                        door = 'indoor & stay away from open areas and tall objects'
-                        return door
+                        door = 'indoor' 
+                        tip = 'stay away from open areas and tall objects'
+                        return door, tip
                     elif "thunderstorm" in weather_description:
-                        door = 'outdoor with precautions'
+                        door = 'outdoor'
+                        tip = 'go with precautions'
+                        return door, tip
                     elif "thunderstorm with light drizzle" in weather_description:
-                        door = 'outdoor & be caution about lightning'
-                        return door
+                        door = 'outdoor' 
+                        tip = 'Be caution about lightning'
+                        return door, tip
                     elif "thunderstorm with drizzle" in weather_description:
-                        door = 'indoor & go out with precautions'
-                        return door
+                        door = 'indoor'
+                        tip = 'go out with precautions'
+                        return door, tip
                     elif "thunderstorm with heavy drizzle" in weather_description:
                        door = 'indoor'
-                       return door
+                       tip = 'go out with precautions'
+                       return door, tip
+                       
 
                 elif "Drizzle" in main:
                     if "heavy intensity drizzle rain" in weather_description:
