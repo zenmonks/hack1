@@ -1,27 +1,29 @@
 import json
-from .views1 import WeatherForecast 
-from .views2 import WeatherHistory
 from django.shortcuts import render
 from django.urls import path
 
-def activity_planner(forecast_data, Weather_History):
-    forecast = WeatherForecast()
-    history = WeatherHistory()
+def activity_planner(forecast_data):
+    #forecast = WeatherForecast()
+    #history = WeatherHistory()
 
     #get the functions from views1.py & views2.py
-    forecast_json = forecast.get()
-    history_json = history.get()
+    #forecast_json = forecast.get()
+    #history_json = history.get()
     
     #get the mean-values for that location
-    mean_temp = Weather_History['mean_temp']
-    main = forecast_data['main']
-    weather_description = forecast_data['description']  
+     
+    #main = forecast_data['main']
+    #weather_description = forecast_data['description']  
     
     # Get the weather parsed_data from views1.py & views2.py 
-    for entry in weather_data:
+    for entry in forecast_data:
         # Check conditions (mean_temp, temp, feels_like, main, description, time)
+        time = entry['dt'] 
+        main = entry['main']
+        weather_description = entry['description'] 
+        mean_temp = entry['mean_temp']
         if 273 < entry['temp'] < 318 and 260 < entry['feels_like'] < 320:
-            time = forecast_data['dt'] 
+             
             if (mean_temp - 7) < entry['feels_like'] < (mean_temp + 7):
                 
                 if "Thunderstorm" in main: 

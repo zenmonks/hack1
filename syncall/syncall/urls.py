@@ -21,6 +21,5 @@ from backend import views1, views2
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('history/', views2.WeatherHistory.as_view(), name='history'),
     path('weather/', views1.WeatherForecast.as_view(), name='forecast'),
 ]
