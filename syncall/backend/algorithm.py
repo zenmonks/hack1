@@ -4,7 +4,7 @@ from django.urls import path
 
 def activity_planner(forecast_data):
     suggest = []
-    # Get the weather parsed_data from views1.py & views2.py 
+    # Get the weather parsed_data from views1.py & views2.py   
     for entry in forecast_data:
         time = entry['dt'] 
         main = entry['main']

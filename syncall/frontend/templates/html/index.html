@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Weather-inspired Activity Planner   WAP</h1>
+    <form id="apiForm">
+        <label for="zipCode">Zip Code:</label>
+        <input type="text" id="zipCode" name="zipCode" required><br><br>
+
+        <label for="countryCode">Country Code:</label>
+        <select id="countryCode" name="countryCode" required>
+            <option value="CA">Canada</option>
+            <option value="IN">India</option>
+            <option value="UK">United Kingdom</option>
+            <option value="US">United States</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("apiForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const zipCode = document.getElementById("zipCode").value;
+            const countryCode = document.getElementById("countryCode").value;
+
+            const apiURL = "YOUR_API_URL"; // Replace with your actual API URL
+
+            // Use fetch or another method to make the API request here
+            // Example using fetch:
+            fetch(apiURL, {
+                method: "POST", // Adjust the method as needed
+                body: JSON.stringify({ zipCode, countryCode }),
+                headers: {
+                    "Content-Type": "application/json"
+                    // Add any other headers required by your API
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the API response data as needed
+                console.log(data);
+            })
+            .catch(error => {
+                // Handle any errors that occur during the API request
+                console.error("An error occurred:", error);
+            });
+        });
+    </script>
+
+
+</body>
+</html>
