@@ -4,7 +4,6 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.views import View
 from .algorithm import activity_planner
-#from .views2 import WeatherHistory
 
 
 # Create your views here.
@@ -16,7 +15,7 @@ class WeatherForecast(View):
         
         #Get the weather forecast from the API
         api_url = f'https://cloud.syncloop.com/tenant/1692162910856/packages.apiapp.weather.weatherforecast.main?lat=23&lon=91'
-        api_call = f'https://cloud.syncloop.com/tenant/1692162910856/packages.apiweather.weatherii.weatherhistory.main?lon=91&lat=23'
+        api_call = f'https://cloud.syncloop.com/tenant/1692162910856/packages.apiweather.weatherii.weatherhistory.main?lat=23&lon=91'
         headers = { 
                     'Content-Type' : 'application/json',
                     'Authorization' : 'Bearer {token}'
