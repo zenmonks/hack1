@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     #Add the backend app
     'backend',
+    'frontend',
 ]
 
 MIDDLEWARE = [

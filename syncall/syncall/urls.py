@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from backend import views1
+from frontend import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('weather/', views1.WeatherForecast.as_view(), name='forecast'),
+    path('', views.index, name='home'),
+    path('forecast/', views1.WeatherForecast.as_view(), name='forecast'),
 ]

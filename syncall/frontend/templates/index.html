@@ -7,7 +7,8 @@
 </head>
 <body>
     <h1>Weather-inspired Activity Planner   WAP</h1>
-    <form id="apiForm">
+    <form id="apiForm" action="{% url 'forecast' %}" method="get">
+        {% csrf_token %}
         <label for="zipCode">Zip Code:</label>
         <input type="text" id="zipCode" name="zipCode" required><br><br>
 
@@ -22,23 +23,20 @@
         <button type="submit">Submit</button>
     </form>
 
-    <script>
+     <!--<script>
         document.getElementById("apiForm").addEventListener("submit", function(event) {
             event.preventDefault(); // Prevent form submission
 
             const zipCode = document.getElementById("zipCode").value;
             const countryCode = document.getElementById("countryCode").value;
 
-            const apiURL = "YOUR_API_URL"; // Replace with your actual API URL
+            const apiURL = "{% url 'forecast' %}zip_code=" + zipCode + "&country_code=" + countryCode;
 
-            // Use fetch or another method to make the API request here
-            // Example using fetch:
             fetch(apiURL, {
-                method: "POST", // Adjust the method as needed
+                method: "GET", // Adjust the method as needed
                 body: JSON.stringify({ zipCode, countryCode }),
                 headers: {
                     "Content-Type": "application/json"
-                    // Add any other headers required by your API
                 }
             })
             .then(response => response.json())
@@ -51,7 +49,7 @@
                 console.error("An error occurred:", error);
             });
         });
-    </script>
+    </script>-->
 
 
 </body>
