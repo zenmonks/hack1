@@ -4,28 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suggestion</title>
+    <!DOCTYPE html>
+    <!DOCTYPE html>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+
+  table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #2980b9;
+    color: white;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tr:hover {
+    background-color: #e0e0e0;
+  }
+    </style>
 </head>
+
 <body>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Activity</th>
-                <th>Weather Note</th>
-                <th>Humidity Level</th>
-                <th>Date & Time</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for activity_row in your_activities %}
-            <tr>
-                <td>{{ activity_row.0 }}</td>
-                <td>{{ activity_row.1 }}</td>
-                <td>{{ activity_row.2 }}</td>
-                <td>{{ activity_row.3 }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+  <table >
+    <thead>
+        <tr>
+            <th>Activity</th>
+            <th>Weather Note</th>
+            <th>Humidity Level</th>
+            <th>Date & Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for activity_row in your_activities %}
+        <tr>
+            <td>{{ activity_row.0 }}</td>
+            <td>{{ activity_row.1 }}</td>
+            <td>{{ activity_row.2 }}</td>
+            <td>{{ activity_row.3 }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table> 
     
 </body>
 </html>
