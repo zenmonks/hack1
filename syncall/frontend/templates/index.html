@@ -23,34 +23,5 @@
         <button type="submit">Submit</button>
     </form>
 
-     <!--<script>
-        document.getElementById("apiForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent form submission
-
-            const zipCode = document.getElementById("zipCode").value;
-            const countryCode = document.getElementById("countryCode").value;
-
-            const apiURL = "{% url 'forecast' %}zip_code=" + zipCode + "&country_code=" + countryCode;
-
-            fetch(apiURL, {
-                method: "GET", // Adjust the method as needed
-                body: JSON.stringify({ zipCode, countryCode }),
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Handle the API response data as needed
-                console.log(data);
-            })
-            .catch(error => {
-                // Handle any errors that occur during the API request
-                console.error("An error occurred:", error);
-            });
-        });
-    </script>-->
-
-
 </body>
 </html>
