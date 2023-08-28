@@ -1,3 +1,4 @@
+from doctest import OutputChecker
 import json
 import requests
 from django.shortcuts import render
@@ -17,7 +18,7 @@ class WeatherForecast(View):
            countryCode = request.GET.get('countryCode')
            print(zipCode)
            print(countryCode)
-           geocoding_api_url = f'http://api.openweathermap.org/geo/1.0/zip?zip={zipCode},{countryCode}&appid={key}'
+           geocoding_api_url = f'http://api.openweathermap.org/geo/1.0/zip?zip={zipCode},{countryCode}&appid=your_api_key'
         
         geocoding_response = requests.get(geocoding_api_url)
         geocoding_data = geocoding_response.json()
@@ -80,7 +81,7 @@ class WeatherForecast(View):
             recommended_activity = activity_planner(forecast_data)
         
 
-            return JsonResponse({'your_activities': recommended_activity })  
+            return render(request,'output.html', {'your_activities': recommended_activity })  
           
         elif forecast_response.status_code != 200:
             error_message = {'error' : 'Something went wrong with forecast API'}
