@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggestion</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Activity</th>
+                <th>Weather Note</th>
+                <th>Humidity Level</th>
+                <th>Date & Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for activity_row in your_activities %}
+            <tr>
+                <td>{{ activity_row.0 }}</td>
+                <td>{{ activity_row.1 }}</td>
+                <td>{{ activity_row.2 }}</td>
+                <td>{{ activity_row.3 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</body>
+</html>
