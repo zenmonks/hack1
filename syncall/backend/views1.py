@@ -17,7 +17,7 @@ class WeatherForecast(View):
            countryCode = request.GET.get('countryCode')
            print(zipCode)
            print(countryCode)
-           geocoding_api_url = f'http://api.openweathermap.org/geo/1.0/zip?zip={zipCode},{countryCode}&appid=your_api_key'
+           geocoding_api_url = f'http://api.openweathermap.org/geo/1.0/zip?zip={zipCode},{countryCode}&appid=8e9c8389bf66ef430ffa5a19af301e17'
         
         geocoding_response = requests.get(geocoding_api_url)
         geocoding_data = geocoding_response.json()
@@ -30,7 +30,7 @@ class WeatherForecast(View):
         api_call = f'https://cloud.syncloop.com/tenant/1692162910856/packages.apiweather.weatherii.weatherhistory.main?lat={lat}&lon={lon}'
         headers = { 
                     'Content-Type' : 'application/json',
-                    'Authorization' : 'Bearer {token}'
+                    'Authorization' : 'Bearer 6KPnAjasx2BzGyQSF2Lnfw51zqpeNjBy5lHN66E8Fgw5s8dxWsDmpr5DQQAOP7uBKhwOeYrBljpGnJKrpaUWEQ6h9JmFScSEHjiYZQ1NZXVIr+OTK6TXB2NWImPfVdzpwg033S0QyQ5jPJFnwwViuGFxW+QXqxoyJWY3h0Kago8G85t4pN6b3Vt88TjwMuK/BqG0RO2rP2H9mGa1GwrrEGbu0NbS5TPRj1XmVzmBHkJGVdkZKdFcF1u/b2h9TjytIJlyyCvbcFsSZNy8biSWe/dEXmQAH+37q3SuNecjjTUlBaUBFxWUI1+VEhA3cRI99GIQuo1hbofkUrHFbmum+PEOey0InePOX6UzcrQHWP7hYX83HbTQRNh0h5D0rfSu1FQaaSXpP3HMBlQKuKHwnQbwPmoDK1hdR+B92YPk+YC6kpDHnv5Eg/PY8ZMVwcr2MjN3bidKu/q0PAGNPGg2/ZCmfbcAfomhZqztATpA+JFDJBtENTZOfVVL73VS/3ZRINPTWy+dOOLKzc37ode0gQ=='
                  }   #11:20
         forecast_response = requests.get(api_url, headers=headers)
         history_response = requests.get(api_call, headers=headers)
